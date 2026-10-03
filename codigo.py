@@ -15,9 +15,9 @@ st.sidebar.write('## Cadastrar Vendas')
     #campo data
 data = st.sidebar.date_input('Data', min_value='2026-10-01', max_value='today')
     #campo vendedor
-vendedor = st.sidebar.selectbox('Vendedor', ['Ana', 'Bruno', 'Carla'])
+vendedor = st.sidebar.text_input('Vendedor')
     #campo produto
-produto = st.sidebar.selectbox('Produto', ['Notebook', 'Celular', 'Fone'])
+produto = st.sidebar.text_input('Produto')
     #campo quantidade
 qtd = st.sidebar.number_input('Quantidade', step=1)
     #campo valor
