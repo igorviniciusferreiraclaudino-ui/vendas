@@ -2,8 +2,11 @@
 import pandas as pd
 import streamlit as st
 import plotly.express as px
+from pathlib import Path
+pasta = Path(__file__).parent
+caminho = pasta/'vendas.csv'
 
-tabela = pd.read_csv('automatizações/sistema/vendas.csv')
+tabela = pd.read_csv(caminho)
 #titulo
 st.write('# Sistema de Vendas')
 
@@ -29,7 +32,7 @@ if botao:
         nova_venda = [data, vendedor, produto, qtd, valor]
         linhafinal = len(tabela)
         tabela.loc[linhafinal] = nova_venda
-        tabela.to_csv('automatizações/sistema/vendas.csv', index=False)
+        tabela.to_csv(caminho, index=False)
         st.success('Venda Cadastrada')
 #seção de vendas cadastradas
 st.write('## Vendas Cadastradas')
